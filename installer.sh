@@ -18,17 +18,6 @@ function startGlassfish {
    ./asadmin start-domain domain1
 }
 
-function answerStartGlassfish () {
-    while true; do
-        read -p "$1 " yn
-        case $yn in
-            [Yy]* ) exit;;
-            [Nn]* ) exit;;
-            * ) echo "Please answer yes or no.";;
-        esac
-    done
-}
-
 if [ "$(id -u)" != "0" ]; then
    echo "This script must be run as root" 1>&2
    exit 1
@@ -125,5 +114,5 @@ read -p "Do you wish to start Glassfish? (y/n) " glassfishStartAnswer
 if [ "$glassfishStartAnswer" = "y" ]; then
   startGlassfish
 else
-  echo "You need more bash programming"
+  echo "Good bye :)"
 fi
