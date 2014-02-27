@@ -11,6 +11,7 @@ git clone git@github.com:halid/glassfish4-installer.git
 cd glassfish4-installer.git
 chmod a+x installer.sh
 ./installer.sh
+```
 
 
 ###TODO
