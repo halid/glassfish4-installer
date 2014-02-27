@@ -15,13 +15,11 @@ DERBY_BIN=$GLASSFISH_DIR/javadb/bin
 case "$1" in
 start)
   echo "Starting GlassFish from $GLASSFISH_DIR"
-  sudo -u glassfish -E "$GLASSFISH_DIR/bin/asadmin" start-database
   sudo -u glassfish -E "$GLASSFISH_DIR/bin/asadmin" start-domain domain1
   ;;
 stop)
   echo "Stopping GlassFish from $GLASSFISH_DIR"
   sudo -u glassfish -E "$GLASSFISH_DIR/bin/asadmin" stop-domain domain1
-  sudo -u glassfish -E "$GLASSFISH_DIR/bin/asadmin" stop-database
   ;;
 restart)
   $0 stop
@@ -38,8 +36,6 @@ status)
     echo "\n# JDBC resources:"
     sudo -u glassfish -E "$GLASSFISH_DIR/bin/asadmin" list-jdbc-resources | grep "jdbc/"
   fi
-  echo "\n# Derby:"
-  sudo -u glassfish -E "$DERBY_BIN/NetworkServerControl" ping | sed "s/^.* : //"
   ;;
 *)
   echo "Usage: $0 {start|stop|restart|status}"
