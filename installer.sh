@@ -7,7 +7,7 @@
 # github.com/halid/glassfish4-installer
 # 
 #
-# This script only running Debian based distributions
+# This script running only Debian based distributions
 
 # Configurations
 GLASSFISH_USER_DIR=/opt/glassfish
