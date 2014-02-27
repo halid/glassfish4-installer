@@ -5,10 +5,13 @@ glassfish4 installer for debian &amp; ubuntu based distributions
 
 
 ###Usage
+
+```bash
 git clone git@github.com:halid/glassfish4-installer.git
 cd glassfish4-installer.git
 chmod a+x installer.sh
 ./installer.sh
+
 
 ###TODO
 
